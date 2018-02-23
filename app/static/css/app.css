@@ -1,3 +1,14 @@
 body {
     padding-top: 5rem;
 }
+.gridview {
+     display: grid;
+     grid-template-columns: auto auto auto;
+     grid-auto-rows: 200px;
+     grid-row-gap: 1ch;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}

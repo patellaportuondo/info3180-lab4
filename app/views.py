@@ -47,6 +47,21 @@ def upload():
 
     return render_template('upload.html', form = form)
 
+def  get_uploaded_images():
+    image_uploads = os.listdir(filelocation)
+    imagelist=[]
+    for x in image_uploads:
+        p,y = x.split(".")
+        if y =="jpg" or y =="png":
+            imagelist.append(x)
+    return imagelist
+    
+@app.route('/files')
+def files():
+    namelist = get_uploaded_images()
+    return render_template('files.html', namelist = namelist)
+    
+        
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
